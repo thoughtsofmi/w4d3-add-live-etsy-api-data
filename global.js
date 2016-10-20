@@ -1,4 +1,34 @@
-fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
+var searchTerm
+fetchRequest()
+
+//document.getElementById('searchInput').addEventListener('keypress', searchEnter)
+document.getElementById('searchButton').addEventListener('click', function(){
+  searchTerm = document.getElementById('searchInput').value
+  document.getElementById('searchResults').innerHTML = ''
+console.log(searchTerm)
+fetchRequest()
+})
+//searchButton.addEventListener('click', search) //action, name handler
+//searchInput.addEventListener('keypress', searchEnter)
+// function searchEnter(event) {
+//     if (event.key === 'Enter'){
+//         search()
+//     }
+// }
+// function search() {
+//         var searchTerm = document.querySelector('#searchInput').value
+//         console.log(searchTerm)
+//         fetchRequest()
+//
+//     }
+    //createSearchResult(searchResult)
+    //document.querySelector('#search').value = ''
+
+//var searchTerm = "board games"//document.getElementById('searchbox').value
+//fetchRequest()
+function fetchRequest(items){
+ fetch('https://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop'))
+
 .then(response => response.json())
 .then(function(items){
 items.results.forEach(function(item){
@@ -35,26 +65,35 @@ items.results.forEach(function(item){
   document.querySelector('#searchResults.row').appendChild(card)
 })
 })
+}
 
-// //use button to add event listener
-  var button = document.querySelector('#searchbox')
-  button.addEventListener('click', search)
-//added keypress
-var searchInput = document.querySelector('input')
-searchInput.addEventListener('keypress', searchEnter)
-function searchEnter(event) {
-  if (event.key === 'Enter'){
-      search()
-      }
-  }
+//document.getElementById('search').addEventListener('keypress', searchEnter)
+  //document.getElementById('searchBtn').addEventListener('click', search)
+
 //adding the function to run the search.  Stuck on this for a while.  Heard James saying that  I needed to fetch the data again for it to pull down to work.  Came home to work on the data and... is giving me an error msg that it can't get data.
-  function search() {
-          var searchTerm = document.querySelector('#searchResults').value
+  // function search() {
+  //
+  //
+  //       fetch('https://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent(searchTerm) + '&includes=Images,Shop'))
+  //       .then(response => response.json())
+  //       .then(response => items(response.results))
+  //
+  //       document.getElementById('searchbox').value = ''//clear the input value
+  //
+  //   }
 
-        fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent('searchTerm') + '&includes=Images,Shop'))
-        .then(response => response.json())
-        .then(response => items(response.results))
-
-        document.querySelector('#searchResults').value = ''//to clear the search bar
-
-    }
+// searchButton.addEventListener('click', search) //action, name handler
+// searchInput.addEventListener('keypress', searchEnter) //action, name handler, added the keypress because not all users use the click on search.  most use enter.
+//
+// function searchEnter(event) {
+//     if (event.key === 'Enter'){
+//         search()
+//     }//if the enter key is enter then search.  if not, then don't
+// }
+// function search() {
+//         var searchTerm = document.querySelector('#searchInput').value
+//         console.log(searchTerm)
+//
+//     }
+    //createSearchResult(searchResult)
+    //document.querySelector('#search').value = ''
