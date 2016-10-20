@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: #f5f5f1;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  height: 370px;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+
+.card img {
+  margin-bottom: 15px;
+}
+
+.background {
+  background: white;
+}
+
+.blacktext {
+  color: black;
+}
+
+.borderbox {
+  border-radius: 2px;
+  background: white;
+  color: #34A8c4;
+}
+
+.etsy {
+  font-family: 'Abhaya Libre', serif;
+  color: #f46400;
+  font-size: 35px;
+}
+
+.searchbtn {
+  background-color: #34A8c4;
+  color: white;
+}
+
+.imageheight {
+  height: 200px;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.leftp {
+  padding-left: 0px;
+}
+
+.rightp {
+  padding-right: 0px;
+}
+
+.bottomp {
+  padding-bottom: 10px;
+}
+
+.blue {
+  color: #34A8c4;
+}
